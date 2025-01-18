@@ -1,0 +1,196 @@
+/* 기본 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* 전체 컨테이너 */
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 각 섹션 제목 */
+h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 사용자 정보 표시 섹션 */
+#userInfoDisplay {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+#userInfoDisplay p {
+    font-size: 16px;
+    color: #333;
+    margin: 5px 0;
+}
+
+/* 추천 식단 표시 */
+#dietRecommendation {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+#dietRecommendation p {
+    font-size: 16px;
+    color: #333;
+}
+
+/* 새로운 식단 추천 받기 버튼 */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* 섹션별 내비게이션 스타일 (탭형) */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.tabs div {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #555;
+    transition: background-color 0.3s ease;
+}
+
+.tabs div:hover {
+    background-color: #e0e0e0;
+}
+
+.tabs .active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* 폼 레이블 스타일 */
+label {
+    font-size: 16px;
+    color: #333;
+}
+
+/* 텍스트 입력 필드 및 셀렉트 박스 스타일 */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #4CAF50;
+}
+
+/* 체크박스 스타일 (알레르기 없음 선택 시) */
+#noAllergy {
+    margin-right: 10px;
+}
+
+/* 알레르기 입력 필드와 체크박스가 있는 섹션 */
+#allergy-section {
+    display: block; /* 섹션이 기본적으로 표시되도록 설정 */
+}
+
+/* 체크박스가 선택되었을 때 알레르기 입력 필드 숨기기 */
+#noAllergy:checked ~ #allergy-section {
+    display: none; /* 체크박스가 체크되면 해당 섹션 숨기기 */
+}
+
+/* 알레르기 섹션의 추가 스타일 */
+#checkbox-section {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* 알레르기 정보 텍스트 스타일 */
+.textLabel {
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* 버튼 스타일 (새로운 식단 추천 받기) */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* 텍스트 필드의 숨김 상태 */
+input[type="text"]:not(:focus),
+input[type="number"]:not(:focus) {
+    color: #555;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #4CAF50;
+}

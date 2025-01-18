@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>사용자 정보 입력</title>
+
+  <link rel="stylesheet" href="user_info.css"> <!-- user_info.css 파일을 로드 -->
+</head>
+<body>
+  <div class="container">
+    <p class="fsize">사용자 정보 입력</p>
+
+    <!-- 탭 내비게이션 -->
+    <div class="tabs">
+      <div class="tab active" id="userInfoTab">사용자 정보</div>
+      <div class="tab" id="allergyTab">알레르기 정보</div>
+      <div class="tab" id="dietGoalTab">식단 목표</div>
+    </div>
+
+    <!-- 사용자 정보 섹션 -->
+    <div class="tab-content active" id="userInfoContent">
+      <div class="section">
+        <label for="age">나이를 입력해주세요.</label>
+        <input type="number" id="age" placeholder="나이" />
+      </div>
+      <div class="section">
+        <label for="gender">성별을 선택해주세요.</label>
+        <select id="gender">
+          <option value="male">남성</option>
+          <option value="female">여성</option>
+          <option value="other">기타</option>
+        </select>
+      </div>
+      <div class="section">
+        <label for="weight">체중을 입력해주세요.</label>
+        <input type="number" id="weight" placeholder="체중(kg)" />
+      </div>
+      <div class="section">
+        <label for="height">키를 입력해주세요.</label>
+        <input type="number" id="height" placeholder="키(cm)" />
+      </div>
+      <div class="section">
+        <label for="activity">활동 수준을 선택해주세요.</label>
+        <select id="activity">
+          <option value="sedentary">거의 운동하지 않음</option>
+          <option value="light">가벼운 운동</option>
+          <option value="moderate">중간 정도의 운동</option>
+          <option value="intense">강도 높은 운동</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- 알레르기 정보 섹션 -->
+    <div class="tab-content" id="allergyContent">
+      <div class="section">
+        <label for="noAllergy">
+          <input type="checkbox" id="noAllergy" /> 알레르기 없음
+        </label>
+      </div>
+      
+      <!-- 알레르기 음식 입력 필드, 기본적으로 숨겨짐 -->
+      <div class="section" id="allergy-section" style="display: block;">
+        <label for="allergy">알레르기 음식을 입력해주세요.</label>
+        <input type="text" id="allergy" placeholder="알레르기 음식" />
+      </div>
+    </div>
+
+    <!-- 식단 목표 섹션 -->
+    <div class="tab-content" id="dietGoalContent">
+      <div class="section">
+        <label for="dietGoal">식단 목표를 선택해주세요.</label>
+        <select id="dietGoal">
+          <option value="weight_loss">체중 감량</option>
+          <option value="weight_gain">체중 증가</option>
+          <option value="maintain">유지</option>
+        </select>
+      </div>
+      <div class="section">
+        <label for="preferredFood">선호하는 음식을 입력해주세요.</label>
+        <input type="text" id="preferredFood" placeholder="선호하는 음식" />
+      </div>
+      <div class="section">
+        <label for="avoidFood">피해야 할 음식을 입력해주세요.</label>
+        <input type="text" id="avoidFood" placeholder="피해야 할 음식" />
+      </div>
+    </div>
+
+    <!-- 저장 버튼 -->
+    <button id="saveButton">저장</button>
+	<!-- 메시지를 표시할 div 요소 -->
+	<div id="messageContainer"></div>
+
+    <!-- 안내 메시지 -->
+    <div class="alert" id="alertMessage"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // 체크박스를 클릭했을 때 알레르기 입력 필드를 숨기거나 표시하는 기능
+      document.getElementById("noAllergy").addEventListener("change", function() {
+        var allergySection = document.getElementById("allergy-section");
+
+        if (this.checked) {
+          allergySection.style.display = "none"; // 체크 시 숨김
+        } else {
+          allergySection.style.display = "block"; // 체크 해제 시 표시
+        }
+      });
+
+      // 저장 버튼 클릭 시
+      document.getElementById("saveButton").addEventListener("click", function() {
+        console.log("Save button clicked!");
+        // 추가적으로 저장 작업 처리
+      });
+    });
+  </script>
+<script src="user_info.js"></script> <!-- user_info.js 파일을 로드 -->
+</body>
+</html>
